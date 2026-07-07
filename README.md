@@ -23,12 +23,18 @@ Using the token editor, I left the cryptographic signature entirely unaltered bu
    
 The modified token was sent back to the server. Because the backend application skipped the integrity check on the third component of the JWT (the signature), it accepted the altered payload parameters at face value.
 
+
+
+<img width="802" height="325" alt="Screenshot 2026-07-07 044444" src="https://github.com/user-attachments/assets/df999f8d-241a-4594-83a5-6b41e1365b35" />
+
+
 4. Admin Access & Lab Completion
 
 With the forged administrative token active, I targeted the user management endpoint:
+
           GET /admin/delete?username=carlos HTTP/1.1
 
-          <img width="802" height="325" alt="Screenshot 2026-07-07 044444" src="https://github.com/user-attachments/assets/ee7cf73c-b170-4c9a-9e59-7c196581e4be" />
+         
 
 
 The server executed the request under administrative context, successfully removing the user ⁠carlos⁠ and completing the challenge objectives.
